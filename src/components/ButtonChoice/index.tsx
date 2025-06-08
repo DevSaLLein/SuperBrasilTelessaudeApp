@@ -5,7 +5,7 @@ type Props = TouchableOpacityProps & {
   title: string;
   className?: string;
   image: any;
-  isSelected?: boolean; // <- nova prop
+  isSelected?: boolean;
 };
 
 export default function ButtonChoice({ title, className, image, isSelected, ...rest }: Props) {

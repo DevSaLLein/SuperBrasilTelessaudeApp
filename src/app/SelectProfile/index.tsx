@@ -1,6 +1,7 @@
 import ButtonChoice from "@/src/components/ButtonChoice";
 import ButtonPerson from "@/src/components/ButtonPerson";
 import { useState } from "react";
+import { router } from "expo-router";
 import { View, Text, Image } from "react-native";
 
 export default function SelectProfile() {
@@ -12,6 +13,14 @@ export default function SelectProfile() {
   : selected === 'profissional'
   ? require("../../assets/images/doctorImage.jpg")
   : require("../../assets/images/personAndDoctor.jpg")
+
+  const handleContinue = () => {
+  if (selected === 'paciente') {
+    router.push('/paciente');
+  } else if (selected === 'profissional') (
+    router.push('/profissional')
+  )
+};
 
 
   return (
@@ -40,7 +49,7 @@ export default function SelectProfile() {
             />
           </View>
 
-          <ButtonPerson title="Continuar" />
+          <ButtonPerson title="Continuar" onPress={handleContinue}/>
         </View>
       </View>
     </View>
